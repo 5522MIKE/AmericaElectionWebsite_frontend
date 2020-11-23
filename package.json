@@ -3,14 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "start": "npm run dev",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
     "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "jquery": "^3.5.1",
+    "less": "^3.12.2",
+    "popper.js": "^1.16.1",
+    "vue": "^3.0.0",
+    "vue-router": "^4.0.0-alpha.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
