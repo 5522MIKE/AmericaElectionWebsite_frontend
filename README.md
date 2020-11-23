@@ -1,24 +1,7 @@
-# software_implementation
+# software_website_frontend
 
-## Project setup
-```
-npm install
-```
+*华南师范大学软件学院2020年中级软件实作项目前端*
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+开发中...
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+需要安装使用请移步 [README_vue.md](./README_vue.md)
