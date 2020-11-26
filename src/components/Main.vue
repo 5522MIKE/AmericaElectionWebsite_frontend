@@ -1,10 +1,6 @@
 <template>
-<!-- 背景图片加载出现奇怪错误 -->
-<!-- <div>
-    <img class="background" :src="bgSrc" width="100%" height="100%" alt="" />
-</div> -->
+<div class="bg">
 <div class="container">
-
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">2020 America Election</a>
@@ -36,14 +32,15 @@
     <div class="jumbotron">
         <h1>CAST YOUR SACRED VOTE</h1>
         <p>...</p>
-        <p><a class="btn btn-success btn-lg" href="#" role="button">VOTE!</a></p>
+        <p><a id="vote" class="btn btn-success btn-lg" href="#" role="button">VOTE!</a></p>
     </div>
 
     <!-- 新闻栏&总统候选人介绍 -->
     <div class="row">
         <!-- 新闻栏目 -->
         <div class="col">
-            <ul class="list-group list-group-flush">
+            <!-- 新闻列表 -->
+            <ul id="newList" class="list-group list-group-flush">
                 <li class="list-group-item">NEWS</li>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
                 <li class="list-group-item">Morbi leo risus</li>
@@ -105,6 +102,7 @@
         </footer>
     </div>
 </div>
+</div>
 </template>
 
 <script>
@@ -112,7 +110,6 @@ export default {
     name:"main",
     data(){
         return {
-            bgSrc:require('../assets/background1.jpeg'),
             imgSrc1:require('../assets/tump.jpg'),
             imgSrc2:require('../assets/tump.jpg'),
             imgSrc3:require('../assets/tump.jpg')
@@ -130,10 +127,23 @@ export default {
     left: 0;
     /* background-color: blue; */
 } 
-.background{
-    width:100%;  
-    height:100%;  /**宽高100%是为了图片铺满屏幕 **/
-    z-index:-1;
-    position: absolute;
+.bg {
+    background-image:url('../assets/bg4.png');
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-attachment:fixed;
+    background-position:center;
+}
+.jumbotron {
+    box-shadow: 3px 0px 5px #fffefe;
+}
+#carouselExampleCaptions {
+    box-shadow: 3px 3px 5px #fffefe;
+}
+#newList {
+    box-shadow: 3px 3px 5px #fffefe;
+}
+#vote {
+    width: 30%;
 }
 </style>
