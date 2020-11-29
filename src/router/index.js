@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HelloWorld from '../components/HelloWorld.vue'
 import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
+import Login from '../components/Login.vue'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -21,6 +22,10 @@ const router = createRouter({
     {
         path:'/vote',
         component: Vote
+    },
+    {
+        path:'/Login',
+        component: Login
     },
     ]
 })
