@@ -27,6 +27,15 @@ const router = createRouter({
         path:'/Login',
         component: Login
     },
+    {
+        path: '/404',
+        name: '404',
+        component: () => import('@/components/NotFind')
+    },
+    {
+        path: '/:pathMatch(.*)',
+        redirect: '/404'
+    }
     ]
 })
  
