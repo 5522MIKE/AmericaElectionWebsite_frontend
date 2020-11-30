@@ -32,7 +32,9 @@
     <div class="jumbotron">
         <h1>CAST YOUR SACRED VOTE</h1>
         <p>...</p>
+        <router-link to="/vote" replace>
         <p><a id="vote" class="btn btn-success btn-lg" href="#" role="button">VOTE!</a></p>
+        </router-link>
     </div>
 
     <!-- 新闻栏&总统候选人介绍 -->
