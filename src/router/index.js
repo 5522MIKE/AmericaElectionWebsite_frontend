@@ -3,6 +3,8 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
+import Introduction from '../components/Introduction.vue'
+import Trump from '../components/Trump.vue'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -35,6 +37,14 @@ const router = createRouter({
     {
         path: '/:pathMatch(.*)',
         redirect: '/404'
+    },
+    {
+        path: '/introduction',
+        component: Introduction
+    },
+    {
+        path: '/trump',
+        component: Trump
     }
     ]
 })
