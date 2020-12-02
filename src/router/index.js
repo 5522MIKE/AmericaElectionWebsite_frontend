@@ -3,6 +3,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
+import DataView from '../components/DataView'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -26,6 +27,11 @@ const router = createRouter({
     {
         path:'/Login',
         component: Login
+    },
+    {
+        path: '/DataView',
+        name: 'DataView',
+        component: DataView
     },
     {
         path: '/404',
