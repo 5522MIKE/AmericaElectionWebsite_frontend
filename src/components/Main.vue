@@ -14,10 +14,10 @@
                 candidates
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">川建国</a>
-                <a class="dropdown-item" href="#">乔振华</a>
+                <a class="dropdown-item" href="/introduction">川建国</a>
+                <a class="dropdown-item" href="/introduction">乔振华</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">其他</a>
+                <a class="dropdown-item" href="/introduction">其他</a>
                 </div>
             </li>
         </ul>
