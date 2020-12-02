@@ -4,7 +4,7 @@
 
 <script>
     import echarts from "echarts";
-    import usaJson from "../assets/usa.json"
+    import usaJson from "../assets/json/usa.json"
     
     var toolTipData=[{
                             name:'Alaska',
