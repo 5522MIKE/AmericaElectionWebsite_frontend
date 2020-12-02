@@ -5,6 +5,7 @@ import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
 import Introduction from '../components/Introduction.vue'
 import Trump from '../components/Trump.vue'
+import NewsPage from '../components/NewsPage.vue'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -28,6 +29,10 @@ const router = createRouter({
     {
         path:'/Login',
         component: Login
+    },
+    {
+        path: '/NewsPage',
+        component: NewsPage
     },
     {
         path: '/404',
