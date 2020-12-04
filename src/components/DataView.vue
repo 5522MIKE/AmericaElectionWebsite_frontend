@@ -90,10 +90,12 @@
         },
         methods: {
             tab1: function(){
-                this.see = true  
+                this.see = true
+                 
             },
             tab2: function(){
                 this.see = false
+                Vue.nextTick(function(){})
             }
         },
         mounted() {
