@@ -4,7 +4,8 @@ import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
 import Introduction from '../components/Introduction.vue'
-import Trump from '../components/Trump.vue'
+import IntroductionB from '../components/IntroductionB.vue'
+import IntroductionO from '../components/IntroductionO.vue'
 import NewsPage from '../components/NewsPage.vue'
 
 const routerHistory = createWebHistory()
@@ -48,10 +49,13 @@ const router = createRouter({
         component: Introduction
     },
     {
-        path: '/trump',
-        component: Trump
+        path: '/introductionb',
+        component: IntroductionB
+    },
+    {
+        path: '/introductiono',
+        component: IntroductionO
     }
     ]
 })
- 
 export default router
