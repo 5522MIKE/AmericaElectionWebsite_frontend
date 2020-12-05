@@ -1,7 +1,5 @@
 <template>
-<span class="glyphicon glyphicon-paperclip"></span>分享
-    <div class="container">
-        
+    <div class="container">  
         <div class="row header">
             <div class="col-md-12">
                 <div>
@@ -13,13 +11,6 @@
                         <a class="link" href="https://twitter.com/realDonaldTrump" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">@realDonaldTrump</a>
                     </p>
                 </div>
-            </div>
-        </div>
-        <div class="row main">
-            <div class="col-md-12">
-                <a href="https://www.whitehouse.gov/people/donald-j-trump/" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">
-                    <span class="glyphicon glyphicon-paperclip"></span>分享
-                </a>
             </div>
         </div>
         <div class="row main">
@@ -46,7 +37,24 @@
 
 <script>
 export default { 
-    
+    data () {
+        return {
+            windowUrl : window.location.href
+        }
+    },
+    methods:{
+        copy(){
+            var domUrl = document.createElement("input");
+            domUrl.value = this.windowUrl;
+            domUrl.id = "creatDom";
+            document.body.appendChild(domUrl);
+            domUrl.select(); // 选择对象
+            document.execCommand("Copy"); // 执行浏览器复制命令
+            let creatDom = document.getElementById("creatDom");
+            creatDom.parentNode.removeChild(creatDom);
+            alert("复制到剪贴板")
+        }
+    }
 }
 </script>
 

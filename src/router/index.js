@@ -5,7 +5,8 @@ import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
 import DataView from '../components/DataView'
 import Introduction from '../components/Introduction.vue'
-import Trump from '../components/Trump.vue'
+import IntroductionB from '../components/IntroductionB.vue'
+import IntroductionO from '../components/IntroductionO.vue'
 import NewsPage from '../components/NewsPage.vue'
 
 const routerHistory = createWebHistory()
@@ -34,10 +35,19 @@ const router = createRouter({
     {
         path: '/DataView',
         name: 'DataView',
+<<<<<<< HEAD
         component: DataView},
     {
         path: '/NewsPage',
         component: NewsPage
+=======
+        component: DataView
+    },
+    {
+        path: '/NewsPage',
+        component: NewsPage
+
+>>>>>>> 71f0b1c8459591f072793114c7a4bd261c610fc3
     },
     {
         path: '/404',
@@ -53,10 +63,13 @@ const router = createRouter({
         component: Introduction
     },
     {
-        path: '/trump',
-        component: Trump
+        path: '/introductionb',
+        component: IntroductionB
+    },
+    {
+        path: '/introductiono',
+        component: IntroductionO
     }
     ]
 })
- 
 export default router

@@ -28,7 +28,7 @@
     </div>
     </nav>
     <div>
-        <trump></trump>
+        <other></other>
     </div>
     <!-- 脚注 -->
     <div>
@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import Trump from './Trump.vue'
+import Other from './Other.vue';
 export default {
-components: { Trump },
+components: {  Other },
     
 }
 </script>
