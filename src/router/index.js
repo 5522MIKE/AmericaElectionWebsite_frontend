@@ -35,12 +35,19 @@ const router = createRouter({
     {
         path: '/DataView',
         name: 'DataView',
+<<<<<<< HEAD
+        component: DataView},
+    {
+        path: '/NewsPage',
+        component: NewsPage
+=======
         component: DataView
     },
     {
         path: '/NewsPage',
         component: NewsPage
 
+>>>>>>> 71f0b1c8459591f072793114c7a4bd261c610fc3
     },
     {
         path: '/404',
