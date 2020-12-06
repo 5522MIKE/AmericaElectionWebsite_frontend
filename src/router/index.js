@@ -3,6 +3,9 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
+import DataView from '../components/DataView'
+import Introduction from '../components/Introduction.vue'
+import Trump from '../components/Trump.vue'
 import NewsPage from '../components/NewsPage.vue'
 
 const routerHistory = createWebHistory()
@@ -29,8 +32,14 @@ const router = createRouter({
         component: Login
     },
     {
+        path: '/DataView',
+        name: 'DataView',
+        component: DataView
+    },
+    {
         path: '/NewsPage',
         component: NewsPage
+
     },
     {
         path: '/404',
@@ -40,6 +49,14 @@ const router = createRouter({
     {
         path: '/:pathMatch(.*)',
         redirect: '/404'
+    },
+    {
+        path: '/introduction',
+        component: Introduction
+    },
+    {
+        path: '/trump',
+        component: Trump
     }
     ]
 })
