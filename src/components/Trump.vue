@@ -14,6 +14,11 @@
             </div>
         </div>
         <div class="row main">
+            <div class="col-md-12">
+                <button type="button" class="btn btn-link" @click="copy()">分享</button>
+            </div>
+        </div>
+        <div class="row main">
             <div class="col-md-2">
             </div>
             <div class="col-md-8 my_text">
