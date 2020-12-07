@@ -35,6 +35,8 @@
         <router-link to="/vote" replace>
         <p><a id="vote" class="btn btn-success btn-lg" href="#" role="button">VOTE!</a></p>
         </router-link>
+        <!-- 点击后调用apiTest函数 -->
+        <p><button @click="apiTest">apitest</button></p>
     </div>
 
     <!-- 新闻栏&总统候选人介绍 -->
@@ -108,6 +110,8 @@
 </template>
 
 <script>
+// 导入axios
+import axios from 'axios'
 export default {
     name:"main",
     data(){
@@ -118,6 +122,26 @@ export default {
         }
     },
     methods: {
+        // api调用函数
+        apiTest(){
+            axios({
+                method:'get',
+                url:'http://127.0.0.1:8000/news/',
+                // 传递参数
+                params: {
+                },
+                // 设置请求头信息，可以传递空值
+                headers: {
+                }
+            }).then(response => {
+                // 请求成功
+                let res = response.data;
+                console.log(res);
+            }).catch(error => {
+                // 请求失败，
+                console.log(error);
+            });
+        }
 }
 }
 </script>
