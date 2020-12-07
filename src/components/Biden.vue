@@ -4,25 +4,23 @@
         <div class="row header">
             <div class="col-md-12">
                 <div>
+                    <br>
                     <img src="../assets/biden-circle.png" alt="" class="rounded-circle">
                 </div>
                 <div>
                     <h1 class="h1">Joe Biden</h1>
                     <p>
-                        <a class="link" href="https://twitter.com/joebiden" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">@JoeBiden</a>
+                        <a class="link" href="https://twitter.com/joebiden" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">@JoeBiden</a><br>
+                        <button type="button" class="btn btn-link" @click="copy()">Share</button>
                     </p>
                 </div>
-            </div>
-        </div>
-        <div class="row main">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-link" @click="copy()">分享</button>
             </div>
         </div>
         <div class="row main">
             <div class="col-md-2">
             </div>
             <div class="col-md-8 my_text">
+                <br>
                 <h5>
                     <strong>
                         The former vice president, now the Democratic presidential nominee, says he can build on the Obama legacy and unite the country in a challenging time.
