@@ -1,16 +1,17 @@
+// 地图组件
 <template>
     <div class="col-lg-12 col-ms-12" id="map" style="width: 100%; height: 450px"></div>
 </template>
 
 <script>
     import echarts from "echarts";
-    import usaJson from "../assets/json/usa.json"
+    import usaJson from "../assets/json/usa.json"  //美国地图的geojson数据
     
-    var toolTipData=[{
-                            name:'Alaska',
+    var toolTipData=[{                             //数据
+                            name:'Alaska',         //州名
                             value: [{
-                                name: 'T',
-                                value: 1101
+                                name: 'T',         //选举人
+                                value: 1101        //票数
                             },{
                                 name: 'B',
                                 value: 1221
@@ -31,7 +32,7 @@
         methods: {
             myEcharts() {
             // 基于准备好的dom，初始化echarts实例
-                var myChart = echarts.init(document.getElementById("map"));
+                var myChart = echarts.init(document.getElementById("map"));     //echarts初始化
                 
                 echarts.registerMap('USA', usaJson, {
                 Alaska: {              // 把阿拉斯加移到美国主大陆左下方
@@ -53,13 +54,13 @@
 
             // 指定图表的配置项和数据
             var option = {
-                title: {
+                title: {                       //标题
                     text: 'USA ',
                     subtext: '',
                     sublink: '',
                     left: 'right'
                 },
-                tooltip: {
+                tooltip: {                  //鼠标滑过显示的提示标签
                     trigger: 'item',
                     showDelay: 0,
                     transitionDuration: 0.2,
@@ -96,7 +97,7 @@
                         // return params.seriesName + '<br/>' + params.name + ': ' + value;
                     }
                 },
-                toolbox: {
+                toolbox: {               //工具栏，好像没用上
                     show: true,
                     //orient: 'vertical',
                     left: 'left',
@@ -108,11 +109,10 @@
                     }
                 },
                 series: [
-                    {
-                        
+                    { 
                         name: 'USA',
                         type: 'map',
-                        roam: false,
+                        roam: false,          //鼠标滚动缩放
                         map: 'USA',
                         emphasis: {
                             label: {
@@ -123,7 +123,7 @@
                         textFixed: {
                             Alaska: [20, -20]
                         },
-                        itemStyle: {
+                        itemStyle: {               //地图的样式设置
                             normal: {
                                 color: function(params){
                                     for (var i = 0; i < toolTipData.length; i++) {
@@ -140,33 +140,12 @@
                             }
                             
                         },
-                        data:[{
-                            name:'Alaska',
-                            value: [{
-                                name: 'T',
-                                value: 1001
-                            },{
-                                name: 'B',
-                                value: 1221
-                            }]
-                        },{
-                            name:'New York', 
-                            value: [{
-                                name: 'T',
-                                value: 1332,
-                            },{
-                                name: 'B',
-                                value: 2222,
-                            }]}                    
-                        ]
+                        data:[]
                     }
                 ]
             };
-            // var resize = function(){
-            //         this.chart.resize();
-            //     };
                 
-            window.addEventListener("resize",function(){
+            window.addEventListener("resize",function(){            //窗口变化是重新渲染，响应式布局
                 myChart.resize()
             });
             // 使用刚指定的配置项和数据显示图表。
