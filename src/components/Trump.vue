@@ -3,37 +3,37 @@
         <div class="row header">
             <div class="col-md-12">
                 <div>
+                    <br>
                     <img src="../assets/President-Trump-Official-Portrait-200x200.jpg" alt="" class="rounded-circle">
                 </div>
                 <div>
                     <h1 class="h1">Donald Trump</h1>
-                    <p>
-                        <a class="link" href="https://twitter.com/realDonaldTrump" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">@realDonaldTrump</a>
-                    </p>
+                    <div id="text">
+                        <p>
+                            <a class="link" style="color:white;" href="https://twitter.com/realDonaldTrump" target="_blank" rel="noopener noreferrer" aria-label="在新窗口中打开">@realDonaldTrump</a><br>
+                            <a class="btn btn-link" @click="copy()" style="color:white;" >Share</a>
+                        </p>  
+                    </div>              
                 </div>
-            </div>
-        </div>
-        <div class="row main">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-link" @click="copy()">分享</button>
             </div>
         </div>
         <div class="row main">
             <div class="col-md-2">
             </div>
             <div class="col-md-8 my_text">
+                <br>
                 <h5>
                     <strong>
-                        唐纳德·特朗普是美国总统的第45位。他相信美国具有令人难以置信的潜力，甚至会超越其过去取得的显著成就。
-                    </strong>
+                        Donald J. Trump is the 45th President of the United States. He believes the United States has incredible potential and will go on to exceed even its remarkable achievements of the past.                    </strong>
                 </h5>
-                <p class="text-justify">唐纳德·特朗普定义了美国的成功故事。在他的一生中，他不断树立卓越商业和创业的标准，尤其是在房地产、体育和娱乐领域。特朗普先生在进入政治和公共服务时，在私人生活上取得了成功。他在第一次竞选任何政治职位时，就赢得了总统职位。</p>
-                <p class="text-justify">特朗普毕业于宾夕法尼亚大学沃顿金融学院，跟随父亲的脚步进入房地产开发领域，在纽约市留下了自己的印记。在那里，特朗普的名字很快成为曼哈顿最负盛名的地址的代名词，随后，在世界各地。</p>
-                <p class="text-justify">特朗普先生也是一位有成就的作家。他写了十四本畅销书。他的第一<em _istranslated="1">本书《交易的艺术</em>》被认为是一部商业经典。</p>
-                <p class="text-justify">2016年11月8日，特朗普先生以28年来共和党最大的选举团压倒性优势当选总统。特朗普在全国赢得了2600多个县，是1984年罗纳德·里根总统以来最多的一次。他获得了6200多万美国人的选票，是共和党候选人中得票最多的一次。</p>
-                <p class="text-justify">特朗普总统在他的第一个任期内取得了历史性的成果，尽管党派僵局的国家首都，并抵制特殊利益集团和华盛顿机构。</p>
-                <p class="text-justify">他通过了创纪录的减税和法规削减，实现了能源独立，用美国-墨西哥-加拿大协议取代了北美自由贸易协定，投资2万亿美元彻底重建军队，发动了太空部队，消灭了ISIS哈里发，实现了中东和平的重大突破，通过了半个世纪以来最重要的退伍军人事务改革，确认了250多名联邦法官，包括2名最高法院法官， 签署了两党刑事司法改革， 降低药品价格， 保护医疗保险和社会保障， 并保护了我们国家的边界。</p>
-                <p class="text-justify">为了战胜COVID-19全球大流行，特朗普总统发起了自二战以来最伟大的全国动员。特朗普政府颁布了美国历史上最大的一揽子财政救济计划，创建了世界上最先进的测试系统，开发了有效的医疗方法，挽救了数百万人的生命，并启动了"扭曲速度行动"，以在创纪录的时间提供疫苗并击败病毒。</p>
+                <p class="text-justify">Donald J. Trump defines the American success story. Throughout his life he has continually set the standards of business and entrepreneurial excellence, especially in real estate, sports, and entertainment. Mr. Trump built on his success in private life when he entered into politics and public service. He remarkably won the Presidency in his first ever run for any political office.</p>
+                <p class="text-justify">A graduate of the University of Pennsylvania’s Wharton School of Finance, Mr. Trump followed in his father’s footsteps into the world of real estate development, making his mark in New York City. There, the Trump name soon became synonymous with the most prestigious of addresses in Manhattan and, subsequently, throughout the world.</p>
+                <p class="text-justify">Mr. Trump is also an accomplished author. He has written more than fourteen bestsellers.  His first book,<em>The Art of the Deal</em> , is considered a business classic.</p>
+                <p class="text-justify">Mr. Trump announced his candidacy for the Presidency on June 16, 2015. He then accepted the Republican nomination for President of the United States in July of 2016, having defeated 17 other contenders during the Republican primaries.</p>
+                <p class="text-justify">On November 8, 2016, Mr. Trump was elected President in the largest Electoral College landslide for a Republican in 28 years. Mr. Trump won more than 2,600 counties nationwide, the most since President Ronald Reagan in 1984. He received the votes of more than 62 million Americans, the most ever for a Republican candidate.</p>
+                <p class="text-justify">President Trump has delivered historic results in his first term in office despite partisan gridlock in the Nation’s Capital, and resistance from special interests and the Washington Establishment.</p>
+                <p class="text-justify">He passed record-setting tax cuts and regulation cuts, achieved energy independence, replaced NAFTA with the United-States-Mexico-Canada Agreement, invested $2 trillion to completely rebuild the Military, launched the Space Force, obliterated the ISIS Caliphate, achieved a major breakthrough for peace in the Middle East, passed the most significant Veterans Affairs reforms in half a century, confirmed over 250 federal judges, including 2 Supreme Court Justices, signed bipartisan Criminal Justice Reform, lowered drug prices, protected Medicare and Social Security, and secured our nation’s borders.</p>
+                <p class="text-justify">To vanquish the COVID-19 global pandemic, President Trump launched the greatest national mobilization since World War II. The Trump Administration enacted the largest package of financial relief in American history, created the most advanced testing system in the world, developed effective medical treatments to save millions of lives, and launched Operation Warp Speed to deliver a vaccine in record time and defeat the Virus.</p>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -69,9 +69,5 @@ export default {
 }
 .h1{
     color: #e7e4e4e8;
-}
-.main{
-    background-color: #e7e4e4e8;
-    
 }
 </style>
