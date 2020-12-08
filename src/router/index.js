@@ -3,6 +3,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Main from '../components/Main.vue'
 import Vote from '../components/Vote.vue'
 import Login from '../components/Login.vue'
+import DataView from '../components/DataView'
 import Introduction from '../components/Introduction.vue'
 import IntroductionB from '../components/IntroductionB.vue'
 import IntroductionO from '../components/IntroductionO.vue'
@@ -32,8 +33,14 @@ const router = createRouter({
         component: Login
     },
     {
+        path: '/DataView',
+        name: 'DataView',
+        component: DataView
+    },
+    {
         path: '/NewsPage',
         component: NewsPage
+
     },
     {
         path: '/404',
