@@ -17,6 +17,7 @@
 </br>
 
 开发中...
+[后端指路](https://github.com/y894577/2020AmericaElectionWebsite)
 
 ## 软件安装及依赖
 需要安装使用请移步 [README_vue.md](./README_vue.md)
