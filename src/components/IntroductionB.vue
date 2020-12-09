@@ -28,7 +28,7 @@
     </div>
     </nav>
     <div>
-        <trump></trump>
+        <biden></biden>
     </div>
     <!-- 脚注 -->
     <div>
@@ -43,9 +43,9 @@
 </template>
 
 <script>
-import Trump from './Trump.vue'
+import Biden from './Biden.vue';
 export default {
-components: { Trump },
+components: { Biden },
     
 }
 </script>

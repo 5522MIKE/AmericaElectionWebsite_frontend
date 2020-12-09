@@ -1,9 +1,13 @@
 <template>
 <div class="bg">
 <div class="container">
+    <!-- 悬浮组件 -->
+    <vote :show="show" @submit="submit" />
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">2020 America Election</a>
+    <router-link to="/" replace>
+    <a class="navbar-brand" href="#">2020 American Election</a>
+    </router-link>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -15,9 +19,9 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="/introduction">川建国</a>
-                <a class="dropdown-item" href="/introduction">乔振华</a>
+                <a class="dropdown-item" href="/introductionb">乔振华</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/introduction">其他</a>
+                <a class="dropdown-item" href="/introductiono">其他</a>
                 </div>
             </li>
         </ul>
@@ -32,9 +36,9 @@
     <div class="jumbotron">
         <h1>CAST YOUR SACRED VOTE</h1>
         <p>...</p>
-        <router-link to="/vote" replace>
-        <p><a id="vote" class="btn btn-success btn-lg" href="#" role="button">VOTE!</a></p>
-        </router-link>
+        <p><button id="vote" @click='showVote'  class="btn btn-success btn-lg" href="#" role="button">VOTE!</button></p>
+        <!-- 点击后调用apiTest函数 -->
+        <p><button @click="apiTest">apitest</button></p>
     </div>
 
     <!-- 新闻栏&总统候选人介绍 -->
@@ -108,17 +112,54 @@
 </template>
 
 <script>
+// 导入vote组件
+import vote from './Vote.vue'
+// 导入axios
+import axios from 'axios'
 export default {
     name:"main",
     data(){
         return {
             imgSrc1:require('../assets/tump.jpg'),
             imgSrc2:require('../assets/tump.jpg'),
-            imgSrc3:require('../assets/tump.jpg')
+            imgSrc3:require('../assets/tump.jpg'),
+            show: false,
         }
     },
     methods: {
-}
+        // api调用函数
+        apiTest(){
+            axios({
+                method:'get',
+                url:'http://127.0.0.1:8000/news/',
+                // 传递参数
+                params: {
+                },
+                // 设置请求头信息，可以传递空值
+                headers: {
+                }
+            }).then(response => {
+                // 请求成功
+                let res = response.data;
+                console.log(res);
+            }).catch(error => {
+                // 请求失败，
+                console.log(error);
+            });
+        },
+
+        submit() {
+            // 确认弹窗回调
+            this.show = false
+        },
+
+        showVote(){
+            this.show = true
+        }
+    },
+    components: {
+        vote
+    }
 }
 </script>
 

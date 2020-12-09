@@ -52,7 +52,7 @@
         <!-- 下拉按钮 -->
         <!-- 遇到了一点bug，这个按钮没法靠右对齐 -->
           <div class="dropdown float-right">
-            <button class="btn dropdown-toggle w-100" data-toggle="dropdown"><b>Edition</b></button>
+            <button class="btn btn-danger dropdown-toggle w-100" data-toggle="dropdown"><b>Edition</b></button>
             <ul class="dropdown-menu">
                   <li> <a href="#" class="text-muted">U.S.</a></li>
                   <li> <a href="#" class="text-muted">International</a></li>
@@ -65,37 +65,16 @@
 
       <!-- 新闻内容区域 -->
       <div class="content">
-        <div class="row f1_top mt-0">
+        <div class="row f1_top mt-2">
           <!-- 第一行两个大标题 -->
             <div class="col-lg-6 col-md-12 p-3" id="news1">
                 <div class="mr-0 mb-1 ml-3">
-                  <h3><b>GOP silence on Trump's false election claims recalls McCarthy era</b></h3>
-                </div>
-                <div class="mr-0 mb-1" id="newspic1">
-                    <img src="../assets/news1.jpg" class="w-80 h-60"/>
-                </div>
-                <div class="mr-0 mb-1" id="newscontent1">
-                  <h5>
-                    (CNN)The silence of congressional Republican leaders as President Donald Trump's unfounded claims 
-                    of election fraud grow wilder and more venomous increasingly resembles the party's deference to 
-                    Sen. Joe McCarthy during the worst excesses of his anti-Communist crusade in the early 1950s.<br><br>
-                    In McCarthy's era, most of the GOP's leaders found excuses to avoid challenging conspiracy 
-                    theories that they knew to be implausible, even as evidence of their costs to the nation steadily 
-                    mounted. For years, despite their private doubts about his charges and methods alike, the top GOP 
-                    leadership -- particularly Senate Republican leader Robert A. Taft, the Mitch McConnell of his day 
-                    -- either passively abetted or actively supported McCarthy's scattershot claims of treason and 
-                    Communist infiltration.
-                  </h5>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-12 p-3" id="news2">
-                <div class="mb-1 mr-3">
                   <h3><b>Biden readies major stimulus push and flurry of executive actions in first 100 days</b></h3>
                 </div>
-                <div class="mb-1 ml-0" id="newspic2">
-                    <img src="../assets/news2.jpg" class="w-160 h-100"/>
+                <div class="mr-0 mb-1" id="newspic1">
+                    <img src="../assets/news2.jpg" class="w-80 h-60"/>
                 </div>
-                <div class="mr-0 mb-1" id="newscontent2">
+                <div class="mr-0 mb-1" id="newscontent1">
                   <h5>
                     (CNN)President-elect Joe Biden and his transition team are preparing for an early, all-out 
                     push to pass an ambitious new stimulus bill, while also drawing up plans for a flurry 
@@ -109,11 +88,63 @@
                   </h5>
                 </div>
             </div>
+            <div class="col-lg-6 col-md-12 p-0 mt-3" id="news2">
+                <div class="mb-1 mr-3">
+                  <h3><b>GOP silence on Trump's false election claims recalls McCarthy era</b></h3>
+                </div>
+                <div class="mb-1 ml-0" id="newspic2">
+                    <img src="../assets/TrumpNews.jpg" class="w-160 h-100"/>
+                </div>
+                <div class="mr-0 mb-1" id="newscontent2">
+                  <h5>
+                    (CNN)The silence of congressional Republican leaders as President Donald Trump's unfounded claims 
+                    of election fraud grow wilder and more venomous increasingly resembles the party's deference to 
+                    Sen. Joe McCarthy during the worst excesses of his anti-Communist crusade in the early 1950s.<br><br>
+                    In McCarthy's era, most of the GOP's leaders found excuses to avoid challenging conspiracy 
+                    theories that they knew to be implausible, even as evidence of their costs to the nation steadily 
+                    mounted. For years, despite their private doubts about his charges and methods alike, the top GOP 
+                    leadership -- particularly Senate Republican leader Robert A. Taft, the Mitch McConnell of his day 
+                    -- either passively abetted or actively supported McCarthy's scattershot claims of treason and 
+                    Communist infiltration.
+                  </h5>
+                </div>
+            </div>
         </div>
       </div>
+      <!-- 与评论分隔距离50px -->
+      <div style="height:50px; width:1px; border-left:1px #000 solid"></div>
+
+      <!-- 评论框 -->
+      <div class="comment_content" id="comment_content">
+        <div id="h3style" class="p-3">
+          <h3 align="left"><b>Commends</b></h3>
+        </div>
+        <div class="commendtitle ml-5 p-1" align="left">
+            <textarea
+              type="text"
+              placeholder="Please write your commends..."
+              v-model="commend"
+              class="commend"
+              id="commendinput"
+              style="height:100px"
+            />
+            <div align="left" style="magrin-left:5%" class="mt-2">
+              <button @click="postComment" class="btn btn-success">Commend</button>
+            </div> 
+        </div>
+      </div>
+        
   </div>
 </template>
 
+<script>
+
+export default {
+  name:"NewsPage",
+  
+}
+
+</script>
 
 <style scoped>
 .bg {
@@ -140,7 +171,7 @@
 }
 
 #topnav {
-  margin-left: 20px;
+  background-color:#000;
 }
 
 #newscontent1 {
@@ -159,22 +190,29 @@
   margin-top: 2%;
 }
 
-/* #news1 {
-  width: 40%;
-  display: block;
-  word-break: break-all;
-  word-wrap: break-word;
-  margin-left: 30px;
-  text-align: center;
+#h3style {
+  margin-left: 3%;
 }
-/*
-#news2 {
-  width: 40%;
-  display: block;
-  word-break: break-all;
-  word-wrap: break-word;
-  margin-left: 30px;
-  text-align: center;
-} */
 
+#commendinput {
+  width: 70%;
+  margin-left: 0%;
+  padding-left: 1%;
+  border-radius:0.6rem;
+  font-size: 12px;
+  text-align: vertical-align;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  background:rgba(248,248,248,1);
+  box-shadow: none;
+}
+::placeholder {
+  text-align: left;
+  margin-left: 5%;
+  font-size: 10%;
+}
+
+#comment_content {
+  background: linear-gradient(to left, #FF3C31, #1961FB);
+}
 </style>
