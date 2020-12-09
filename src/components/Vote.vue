@@ -1,24 +1,38 @@
 <template>
-    <div class='content'>
-        <h1>VOTE!!!</h1>
-        <p>Please cast your precious vote.</p>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-            <label class="form-check-label" for="inlineRadio1">1</label>
-        </div>
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label" for="inlineRadio2">2</label>
+    <div class="modal-bg" v-show="show">
+        <div class='content'>
+            <h1>VOTE!!!</h1>
+            <p>Please cast your precious vote.</p>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                <label class="form-check-label" for="inlineRadio1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio2">2</label>
+            </div>
+            <button @click="submit">确认</button>
         </div>
     </div>
 </template>
 
-
 <script>
 export default {
-    name:"vote",
+    name: 'vote',
+    props: {
+        show: {
+            type: Boolean,
+            default: false
+        },
+    },
+    methods: {
+        submit() {
+            this.$emit('submit')
+        },
+    }
 }
 </script>
+
 
 <style scoped>
 *,
@@ -52,6 +66,7 @@ p {
     margin: 30px 0;
 }
 .content {
+    background: linear-gradient(to left, #ebd0d0, #becddf);
     position: absolute;
     /* position: relative; */
     top: 50%;
