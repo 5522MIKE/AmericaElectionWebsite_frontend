@@ -6,144 +6,133 @@
 <script>
     import echarts from "echarts";
     import usaJson from "../assets/json/usa.json"  //美国地图的geojson数据
-    
-    var toolTipData=[{                             //数据
-                            name:'Alaska',         //州名
-                            value: [{
-                                name: 'T',         //选举人
-                                value: 1101        //票数
-                            },{
-                                name: 'B',
-                                value: 1221
-                            }]
-                        },{
-                            name:'New York', 
-                            value: [{
-                                name: 'T',
-                                value: 1332,
-                            },{
-                                name: 'B',
-                                value: 2222,
-                            }]}                    
-                        ]
+    import axios from "axios";
 
     export default {
         name: "mapChart",
-        methods: {
+        data(){
+            return {
+                toolTipData: []
+            }
+            
+        },
+        methods: {  
             myEcharts() {
-            // 基于准备好的dom，初始化echarts实例
+                // 基于准备好的dom，初始化echarts实例
                 var myChart = echarts.init(document.getElementById("map"));     //echarts初始化
                 
                 echarts.registerMap('USA', usaJson, {
-                Alaska: {              // 把阿拉斯加移到美国主大陆左下方
-                    left: -131,
-                    top: 25,
-                    width: 15
-                },
-                Hawaii: {
-                    left: -110,        // 夏威夷
-                    top: 28,
-                    width: 5
-                },
-                'Puerto Rico': {       // 波多黎各
-                    left: -76,
-                    top: 26,
-                    width: 2
-                }
-            });
+                    Alaska: {              // 把阿拉斯加移到美国主大陆左下方
+                        left: -131,
+                        top: 25,
+                        width: 15
+                    },
+                    Hawaii: {
+                        left: -110,        // 夏威夷
+                        top: 28,
+                        width: 5
+                    },
+                    'Puerto Rico': {       // 波多黎各
+                        left: -76,
+                        top: 26,
+                        width: 2
+                    }
+                });
 
-            // 指定图表的配置项和数据
-            var option = {
-                title: {                       //标题
-                    text: 'USA ',
-                    subtext: '',
-                    sublink: '',
-                    left: 'right'
-                },
-                tooltip: {                  //鼠标滑过显示的提示标签
-                    trigger: 'item',
-                    showDelay: 0,
-                    transitionDuration: 0.2,
-                    formatter: function (params) {
-                        if (typeof(params.value)[2] == "undefined") {
-                            var toolTiphtml = ''
-                            for (var i = 0; i < toolTipData.length; i++) {
-                                if (params.name == toolTipData[i].name) {
-                                    toolTiphtml += toolTipData[i].name + ':<br>'
-                                    for (var j = 0; j < toolTipData[i].value.length; j++) {
-                                        toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
-                                    }
-                                }
-                            }
-                            console.log(toolTiphtml)
-                            // console.log(convertData(data))
-                            return toolTiphtml;
-                        } else {
-                            toolTiphtml = ''
-                            for (i = 0; i < toolTipData.length; i++) {
-                                if (params.name == toolTipData[i].name) {
-                                    toolTiphtml += toolTipData[i].name + ':<br>'
-                                    for (j = 0; j < toolTipData[i].value.length; j++) {
-                                        toolTiphtml += toolTipData[i].value[j].name + ':' + toolTipData[i].value[j].value + "<br>"
-                                    }
-                                }
-                            }
-                            console.log(toolTiphtml)
-                            // console.log(convertData(data))
-                            return toolTiphtml;
-                        }
-                        // var value = (params.value + '').split('.')
-                        // value = value[0].replace(/(\d{1,3})(?=(?:\d{3})+(?!\d))/g, '$1,');
-                        // return params.seriesName + '<br/>' + params.name + ': ' + value;
-                    }
-                },
-                toolbox: {               //工具栏，好像没用上
-                    show: true,
-                    //orient: 'vertical',
-                    left: 'left',
-                    top: 'top',
-                    feature: {
-                        // dataView: {readOnly: false},
-                        // restore: {},
-                        // saveAsImage: {}
-                    }
-                },
-                series: [
-                    { 
-                        name: 'USA',
-                        type: 'map',
-                        roam: false,          //鼠标滚动缩放
-                        map: 'USA',
-                        emphasis: {
-                            label: {
-                                show: true
-                            }
-                        },
-                        // 文本位置修正
-                        textFixed: {
-                            Alaska: [20, -20]
-                        },
-                        itemStyle: {               //地图的样式设置
-                            normal: {
-                                color: function(params){
-                                    for (var i = 0; i < toolTipData.length; i++) {
-                                        if (params.name == toolTipData[i].name) {
-                                            if(toolTipData[i].value[0].value < toolTipData[i].value[1].value){
-                                                return 'blue'
-                                            }else{
-                                                return '#ff0000'
-                                            }
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {                       //标题
+                        text: 'USA ',
+                        subtext: '',
+                        sublink: '',
+                        left: 'right'
+                    },
+                    tooltip: {                  //鼠标滑过显示的提示标签
+                        trigger: 'item',
+                        showDelay: 0,
+                        transitionDuration: 0.2,
+                        formatter: params=>{
+                            
+                            if (typeof(params.value)[2] == "undefined") {
+                                var toolTiphtml = '';
+                                for (let i in this.toolTipData) {
+                                    if (params.name == this.toolTipData[i].name) {
+                                        toolTiphtml += this.toolTipData[i].name + ':<br>'
+                                        for (let j in this.toolTipData[i].value) {
+                                            toolTiphtml += this.toolTipData[i].value[j].name + ':' + this.toolTipData[i].value[j].value + "<br>"
                                         }
                                     }
-                                    
-                                }      
+                                }
+                                return toolTiphtml;
+                            } else {
+                                toolTiphtml = '';
+                                for (let i = 0; i < this.toolTipData.length; i++) {
+                                    if (params.name == this.toolTipData[i].name) {
+                                        toolTiphtml += this.toolTipData[i].name + ':<br>'
+                                        for (let j in this.toolTipData[i].value) {
+                                            toolTiphtml += this.toolTipData[i].value[j].name + ':' + this.toolTipData[i].value[j].value + "<br>"
+                                        }
+                                    }
+                                }
+                                
+                                // console.log(convertData(data))
+                                return toolTiphtml;
                             }
-                            
-                        },
-                        data:[]
-                    }
-                ]
-            };
+                        }
+                    },
+                    toolbox: {               //工具栏，好像没用上
+                        show: true,
+                        //orient: 'vertical',
+                        left: 'left',
+                        top: 'top',
+                        feature: {
+                            // dataView: {readOnly: false},
+                            // restore: {},
+                            // saveAsImage: {}
+                        }
+                    },
+                    series: [
+                        { 
+                            name: 'USA',
+                            type: 'map',
+                            roam: false,          //鼠标滚动缩放
+                            map: 'USA',
+                            emphasis: {
+                                label: {
+                                    show: true
+                                }
+                            },
+                            // 文本位置修正
+                            textFixed: {
+                                Alaska: [20, -20]
+                            },
+                            itemStyle: {               //地图的样式设置
+                                normal: {
+                                    // !
+                                    color: params=>{
+                                        // console.log(params)
+                                        
+                                        for (let i = 0; i < this.toolTipData.length; i++) {
+                                            // console.log("adfaf")
+                                            // console.log(params.name)
+                                            console.log(this.toolTipData[i].name)
+                                            if (params.name == this.$data.toolTipData[i].name) {
+                                                if(this.$data.toolTipData[i].value[0].value < this.$data.toolTipData[i].value[1].value){
+                                                    return 'blue'
+                                                }else{
+                                                    return '#ff0000'
+                                                }
+                                            }
+                                        }
+                                        
+                                    }      
+                                }
+                                
+                            }
+                        }
+                    ],
+                    data: this.$data.toolTipData
+                };
                 
             window.addEventListener("resize",function(){            //窗口变化是重新渲染，响应式布局
                 myChart.resize()
@@ -152,6 +141,37 @@
             myChart.setOption(option);
             },
             
+            
+        },
+
+        created(){
+            
+            const instance = axios.create({
+                    baseURL: 'http://10.252.64.119:8000/vote/state',
+                    method: 'get',
+                    timeout: 1000,
+                })
+            instance.get('/').then(res=>{
+                
+                for(let i in res.data.data){
+                    let temp = res.data.data[i];
+                    let person = {
+                            name:temp.state.name    
+                        }
+                    let value = [];
+                    for(let j in temp.vote){
+                        let candidate = {
+                            name: temp.vote[j].candidate_name,
+                            value: temp.vote[j].vote_num
+                        }
+                        value.push(candidate);
+                    }
+                    person.value = value;
+                    this.toolTipData.push(person);
+                }
+            }).catch(function(error){
+                console.log(error);
+            });
             
         },
         mounted() {
