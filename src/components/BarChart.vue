@@ -1,22 +1,25 @@
 <template>
-        <div id="barChart" ref="barChart" autoresize:true style="width: 100%;height: 300px"></div>
+        <div id="barChart" ref="barChart" style="width: 100%;height: 2500px"></div>
 </template>
 
 <script>
 import echarts from "echarts";
+import axios from "axios";
+
 
 export default {
-    name: "barChart",
-    
+    name: "barChart",    
+    data(){
+        return {
+            seriesData: [],      
+            nameData: [],
+            stateData: []
+        }
+    },
     methods: {
         myEcharts(){
             let myChart = echarts.init(document.getElementById("barChart"));
-
-            // let seiesData = [];             
-            // let nameData = [];
-
-
-
+            
             var option = {
                 tooltip: {
                     trigger: 'axis',
@@ -25,7 +28,8 @@ export default {
                     }
                 },
                 legend: {                         //图例
-                    data: ['Trump', 'Biden', 'Other']
+                    data: this.nameData
+                    
                 },
                 grid: {                       //绘制网格
                     left: '3%',
@@ -38,55 +42,66 @@ export default {
                 },
                 yAxis: {                           //y轴，州名
                     type: 'category',
-                    data: ['Alaska', 'California', 'Oregen','Washington','Utah']
+                    data: this.stateData
                 },
-                series: [                       //数据
-                    {
-                        name: 'Trump',      
-                        type: 'bar',
-                        stack: '总量',
-                        label: {
-                            show: true,
-                            position: 'insideRight'
-                        },
-                        data: [320, 302, 301, 334, 390, 330, 320]        //每个州Trump的票数
-                    },
-                    {
-                        name: 'Biden',
-                        type: 'bar',
-                        stack: '总量',
-                        label: {
-                            show: true,
-                            position: 'insideRight'
-                        },
-                        data: [120, 132, 101, 134, 90, 230, 210]
-                    },
-                    {
-                        name: 'Other',
-                        type: 'bar',
-                        stack: '总量',
-                        label: {
-                            show: true,
-                            position: 'insideRight'
-                        },
-                        data: [220, 182, 191, 234, 290, 330, 310]
-                    },
-                    
-                ]
+                
+                // series: this.seriesData
+                series: this.seriesData
             };
-            
-            
             window.addEventListener("resize",function(){
                 myChart.resize()
             });
-            myChart.setOption(option)
+            myChart.setOption(option,true)
         }
+    },
+    created(){
+        const instance = axios.create({
+                baseURL: 'http://10.252.64.119:8000/vote/state',
+                method: 'get',
+                timeout: 1000,
+            })
+        instance.get('/').then(res=>{
+            var nData = new Set();
+            for(let i in res.data.data){
+                let temp = res.data.data[i];
+                this.stateData.push(temp.state.name);       //stateData   州名
+                for(let j of temp.vote){
+                    nData.add(j.candidate_name);      // 选举人名
+                }
+            }
+            this.nameData = Array.from(nData)
+            for(let x of this.nameData){
+                let person = {
+                    type: 'bar',
+                    stack: '总量',
+                    // label: {
+                    //     show: true,
+                    //     position: ''
+                    // },
+                    data:[]
+                };
+                person.name = x;
+                this.seriesData.push(person) 
+            }
+            for(let i in res.data.data){
+                let temp = res.data.data[i];      //stateData   州名
+                for(let j of temp.vote){
+                    for(let x of this.seriesData){
+                        if(j.candidate_name == x.name){
+                            x.data.push(j.vote_num);
+                        }
+                    }
+                }
+                
+            }
+            this.myEcharts();
+        }).catch(function(error){
+            console.log(error);
+        });
         
     },
     mounted(){
-        this.myEcharts();
-    }
-
-
+        // this.myEcharts();
+    },
 }
 </script>

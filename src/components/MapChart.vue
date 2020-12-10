@@ -42,7 +42,7 @@
                 // 指定图表的配置项和数据
                 var option = {
                     title: {                       //标题
-                        text: 'USA ',
+                        text: '2020 American Election',
                         subtext: '',
                         sublink: '',
                         left: 'right'
@@ -66,7 +66,7 @@
                                 return toolTiphtml;
                             } else {
                                 toolTiphtml = '';
-                                for (let i = 0; i < this.toolTipData.length; i++) {
+                                for (let i in this.toolTipData) {
                                     if (params.name == this.toolTipData[i].name) {
                                         toolTiphtml += this.toolTipData[i].name + ':<br>'
                                         for (let j in this.toolTipData[i].value) {
@@ -111,13 +111,9 @@
                                     // !
                                     color: params=>{
                                         // console.log(params)
-                                        
-                                        for (let i = 0; i < this.toolTipData.length; i++) {
-                                            // console.log("adfaf")
-                                            // console.log(params.name)
-                                            console.log(this.toolTipData[i].name)
-                                            if (params.name == this.$data.toolTipData[i].name) {
-                                                if(this.$data.toolTipData[i].value[0].value < this.$data.toolTipData[i].value[1].value){
+                                        for (let i in this.toolTipData) {
+                                            if (params.name == this.toolTipData[i].name) {
+                                                if(this.toolTipData[i].value[0].value < this.toolTipData[i].value[1].value){
                                                     return 'blue'
                                                 }else{
                                                     return '#ff0000'
@@ -131,7 +127,7 @@
                             }
                         }
                     ],
-                    data: this.$data.toolTipData
+                    data: this.toolTipData
                 };
                 
             window.addEventListener("resize",function(){            //窗口变化是重新渲染，响应式布局
@@ -169,6 +165,7 @@
                     person.value = value;
                     this.toolTipData.push(person);
                 }
+                this.myEcharts();              //读取数据后渲染图表
             }).catch(function(error){
                 console.log(error);
             });
@@ -178,6 +175,11 @@
             this.myEcharts();
             
         },
+        watch: {
+            myChart(){
+                console.log("111")
+            }
+        }
         
     };
 </script>
