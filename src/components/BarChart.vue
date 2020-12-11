@@ -1,5 +1,5 @@
 <template>
-        <div id="barChart" ref="barChart" style="width: 100%;height: 2500px"></div>
+        <div id="barChart" ref="barChart" style="width: 100%;height: 1800px"></div>
 </template>
 
 <script>
@@ -74,7 +74,7 @@ export default {
                 let person = {
                     type: 'bar',
                     stack: '总量',
-                    // label: {
+                    // label: {                         //在条形图里面显示具体数字
                     //     show: true,
                     //     position: ''
                     // },
@@ -101,7 +101,7 @@ export default {
         
     },
     mounted(){
-        // this.myEcharts();
+        this.myEcharts();
     },
 }
 </script>

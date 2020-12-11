@@ -174,11 +174,6 @@
         mounted() {
             this.myEcharts();
             
-        },
-        watch: {
-            myChart(){
-                console.log("111")
-            }
         }
         
     };
