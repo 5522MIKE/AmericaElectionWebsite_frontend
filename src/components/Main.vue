@@ -5,31 +5,34 @@
     <vote :show="show" @submit="submit" />
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link to="/" replace>
-    <a class="navbar-brand" href="#">2020 American Election</a>
-    </router-link>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                candidates
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/introduction">川建国</a>
-                <a class="dropdown-item" href="/introductionb">乔振华</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/introductiono">其他</a>
-                </div>
-            </li>
-        </ul>
+        <router-link to="/" replace="/">
+            <a class="navbar-brand" href="#">2020 American Election</a>
+        </router-link>
+            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button> -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="btn btn-outline-info dropdown-toggle my-2 my-lg-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    candidates
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/introduction">川建国</a>
+                    <a class="dropdown-item" href="/introductionb">乔振华</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/introductiono">其他</a>
+                    </div>
+                </li>
+            </ul>
+            <router-link to="/DataView" replace="/">
+               <a class="btn btn-outline-danger my-2 my-lg-0 mr-sm-2">Election Results</a> 
+            </router-link>  
+        </div>
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
-    </div>
     </nav>
 
     <!-- 投票页面 -->
@@ -47,7 +50,7 @@
         <div class="col">
             <!-- 新闻列表 -->
             <ul id="newList" class="list-group list-group-flush">
-                <li class="list-group-item">NEWS</li>
+                <a class="text-muted" href="/NewsPage"><li class="list-group-item">NEWS</li></a>
                 <li class="list-group-item">Dapibus ac facilisis in</li>
                 <li class="list-group-item">Morbi leo risus</li>
                 <li class="list-group-item">Porta ac consectetur ac</li>
@@ -67,23 +70,23 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img :src="imgSrc1" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <div class="carousel-caption d-none d-md-block" style="word-break:normal">
+                            <h5>Trump probably can't pardon himself</h5>
+                            <p>(CNN)President Donald Trump, has acknowledged -- sort of and without admitting defeat -- that Joe Biden will be taking over on January 20 at noon.</p>
                         </div>
                     </div>
                         <div class="carousel-item">
                             <img :src="imgSrc2" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                                <h5>Second slide label</h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="carousel-caption d-none d-md-block" style="word-break:normal">
+                                <h5>Trump's case of coronavirus changed the conversation</h5>
+                                <p>(CNN)Coronavirus remains the most prominent thing Americans have seen.</p>
                             </div>
                         </div>
                     <div class="carousel-item">
                         <img :src="imgSrc3" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <div class="carousel-caption d-none d-md-block" style="word-break:normal">
+                            <h5>Electoral College set to seal Trump's fate</h5>
+                            <p>(CNN)A constitutional ritual that is normally a little-noticed curiosity will Monday turn into a symbol of the US political system's durability.</p>
                         </div>
                     </div>
                 </div>
@@ -121,8 +124,8 @@ export default {
     data(){
         return {
             imgSrc1:require('../assets/tump.jpg'),
-            imgSrc2:require('../assets/tump.jpg'),
-            imgSrc3:require('../assets/tump.jpg'),
+            imgSrc2:require('../assets/trump2.jpg'),
+            imgSrc3:require('../assets/trump3.jpg'),
             show: false,
         }
     },
