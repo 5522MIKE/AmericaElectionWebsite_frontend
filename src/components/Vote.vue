@@ -22,7 +22,7 @@ export default {
     props: {
         show: {
             type: Boolean,
-            default: false
+            default: true
         },
     },
     methods: {
@@ -69,7 +69,7 @@ p {
     background: linear-gradient(to left, #ebd0d0, #becddf);
     position: absolute;
     /* position: relative; */
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 100%;
     max-width: 660px;

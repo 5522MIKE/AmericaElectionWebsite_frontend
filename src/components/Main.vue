@@ -3,6 +3,9 @@
 <div class="container">
     <!-- 悬浮组件 -->
     <vote :show="show" @submit="submit" />
+
+    <login :login_show="login_show" @submit="signIn"/>
+
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <router-link to="/" replace="/">
@@ -38,10 +41,9 @@
     <!-- 投票页面 -->
     <div class="jumbotron">
         <h1>CAST YOUR SACRED VOTE</h1>
-        <p>...</p>
         <p><button id="vote" @click='showVote'  class="btn btn-success btn-lg" href="#" role="button">VOTE!</button></p>
         <!-- 点击后调用apiTest函数 -->
-        <p><button @click="apiTest">apitest</button></p>
+        <!-- <p><button @click="apiTest">apitest</button></p> -->
     </div>
 
     <!-- 新闻栏&总统候选人介绍 -->
@@ -103,20 +105,21 @@
     </div>
 
     <!-- 脚注 -->
-    <div>
+    <!-- <div>
         <footer class="mastfoot mt-auto">
             <div class="inner">
                 <p>© 2020-2021 </p>
             </div>
         </footer>
-    </div>
+    </div> -->
 </div>
 </div>
 </template>
 
 <script>
-// 导入vote组件
+// 导入vote和login组件
 import vote from './Vote.vue'
+import login from './Login.vue'
 // 导入axios
 import axios from 'axios'
 export default {
@@ -127,6 +130,7 @@ export default {
             imgSrc2:require('../assets/trump2.jpg'),
             imgSrc3:require('../assets/trump3.jpg'),
             show: false,
+            login_show: false,
         }
     },
     methods: {
@@ -153,15 +157,23 @@ export default {
 
         submit() {
             // 确认弹窗回调
+            alert("s"),
             this.show = false
         },
 
         showVote(){
+            this.login_show = true
+            // this.show = true
+        },
+
+        signIn(){
+            this.login_show = false,
             this.show = true
         }
     },
     components: {
-        vote
+        vote,
+        login
     }
 }
 </script>
