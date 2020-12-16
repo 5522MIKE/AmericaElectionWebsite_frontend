@@ -10,22 +10,16 @@
         <!-- 导航栏 -->
         <ul class="nav justify-content-around nav-justified">
           <li class="nav-item text-center">
-              <b><a href="#" class="nav-link text-danger text-center"> US</a></b>
+              <b><a href="/" class="nav-link text-danger text-center"> Election</a></b>
           </li>
           <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> World</a></b>   
+              <b><a href="/NewsPage" class="nav-link text-danger"> US</a></b>  
           </li>
           <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Politics</a></b>  
-          </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Business</a></b>
+              <b><a href="/NewsPage2" class="nav-link text-danger"> Politics</a></b>
           </li>
           <li class="nav-item">
               <b><a href="#" class="nav-link text-danger"> Health</a></b>
-          </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Entertainment</a></b>  
           </li>
           <li class="nav-item">
               <b><a href="#" class="nav-link text-danger"> Opinion</a></b> 
@@ -33,21 +27,6 @@
           <li class="nav-item">
               <b><a href="#" class="nav-link text-danger"> Sports</a></b>
           </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Style</a></b>
-          </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Travel</a></b>
-          </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> Videos</a></b>
-          </li>
-          <li class="nav-item">
-              <b><a href="#" class="nav-link text-danger"> More</a></b>
-          </li>
-          <!-- <li class="nav-item" id="usericon">
-                <a href="#" class="nav-link"><img src="../assets/user.png" class="w-75 h-75"/></a>
-          </li> -->
         </ul>
         <!-- 下拉按钮 -->
         <!-- 遇到了一点bug，这个按钮没法靠右对齐 -->
@@ -61,7 +40,7 @@
               </ul>
           </div>
         </div>
-      </div> 
+    </div> 
 
       <!-- 新闻内容区域 -->
       <div class="content">
