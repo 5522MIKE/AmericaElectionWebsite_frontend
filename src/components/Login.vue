@@ -58,4 +58,9 @@ button {
         opacity: 1;
     }
 }
+@media (max-width: 640px) {
+    .container {
+        top: 50%;
+    }
+}
 </style>
