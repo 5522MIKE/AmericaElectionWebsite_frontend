@@ -1,12 +1,9 @@
 <template>
     <div class="container" v-show="login_show">
-            <h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
+            <h1 class="h3 mb-3 font-weight-normal">Please enter your ID before voting</h1>
             <input  id="inputEmail" class="form-control" placeholder="ID number" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <div class="checkbox mb-3">
-                <input type="checkbox" value="remember-me" id="remember"><label for="remember">Remember me</label>
-            </div>
-            <button class="btn" @click="signIn">Sign in</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" @click="signIn">Sign in</button>
     </div>
 </template>
 

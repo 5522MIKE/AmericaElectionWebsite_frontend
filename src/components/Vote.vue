@@ -5,13 +5,19 @@
             <p>Please cast your precious vote.</p>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">1</label>
+                <label class="form-check-label" for="inlineRadio1">Trump</label>
             </div>
             <div class="form-check form-check-inline">
                 <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">2</label>
+                <label class="form-check-label" for="inlineRadio2">Biden</label>
             </div>
-            <button @click="submit">确认</button>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                <label class="form-check-label" for="inlineRadio3">Kanye</label>
+            </div>
+            <div>
+                <button class="btn btn-outline-success my-2 my-sm-0"  @click="submit">确认</button>
+            </div>
         </div>
     </div>
 </template>
@@ -35,6 +41,9 @@ export default {
 
 
 <style scoped>
+button{
+    width: 50%;
+}
 *,
 *:before,
 *:after {

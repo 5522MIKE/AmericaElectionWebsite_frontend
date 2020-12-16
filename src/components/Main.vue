@@ -15,7 +15,7 @@
         <!-- <p><button @click="apiTest">apitest</button></p> -->
     </div>
     <!-- 新闻栏&总统候选人介绍 -->
-    <div class="row">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <!-- 新闻栏目 -->
         <div class="col">
             <!-- 新闻列表 -->
@@ -122,7 +122,7 @@ export default {
 
         submit() {
             // 确认弹窗回调
-            alert("s"),
+            alert("success"),
             this.show = false
         },
 
