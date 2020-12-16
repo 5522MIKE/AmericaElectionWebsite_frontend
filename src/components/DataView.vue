@@ -67,8 +67,8 @@
          
         },
         mounted() {
-            MapChart.methods.myEcharts(),          //这里是为了能够在改变窗口大小时刷新，响应式布局
-            BarChart.methods.myEcharts()
+            // MapChart.methods.myEcharts(),          //这里是为了能够在改变窗口大小时刷新，响应式布局
+            // BarChart.methods.myEcharts()
         }
         
     };
