@@ -3,49 +3,19 @@
 <div class="container">
     <!-- 悬浮组件 -->
     <vote :show="show" @submit="submit" />
+    <!-- 登录组件 -->
+    <login :login_show="login_show" @submit="signIn"/>
     <!-- 导航栏 -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <router-link to="/" replace="/">
-            <a class="navbar-brand" href="#">2020 American Election</a>
-        </router-link>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="btn btn-outline-info dropdown-toggle my-2 my-lg-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    candidates
-                    </a>
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/introduction">川建国</a>
-                    <a class="dropdown-item" href="/introductionb">乔振华</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/introductiono">其他</a>
-                    </div>
-                </li>
-            </ul>
-            <router-link to="/DataView" replace="/">
-               <a class="btn btn-outline-danger my-2 my-lg-0 mr-sm-2">Election Results</a> 
-            </router-link>  
-        </div>
-        <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </nav>
-
+    <navigation />
     <!-- 投票页面 -->
     <div class="jumbotron">
         <h1>CAST YOUR SACRED VOTE</h1>
-        <p>...</p>
         <p><button id="vote" @click='showVote'  class="btn btn-success btn-lg" href="#" role="button">VOTE!</button></p>
         <!-- 点击后调用apiTest函数 -->
-        <p><button @click="apiTest">apitest</button></p>
+        <!-- <p><button @click="apiTest">apitest</button></p> -->
     </div>
-
     <!-- 新闻栏&总统候选人介绍 -->
-    <div class="row">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <!-- 新闻栏目 -->
         <div class="col">
             <!-- 新闻列表 -->
@@ -101,22 +71,20 @@
             </div>  
         </div>
     </div>
-
     <!-- 脚注 -->
-    <div>
-        <footer class="mastfoot mt-auto">
-            <div class="inner">
-                <p>© 2020-2021 </p>
-            </div>
-        </footer>
+    <div class="card-footer text-muted">
+        © 2020-2021
     </div>
 </div>
 </div>
 </template>
 
 <script>
-// 导入vote组件
+// 引入vote和login组件
 import vote from './Vote.vue'
+import login from './Login.vue'
+// 引入导航栏
+import navigation from './Navigation.vue'
 // 导入axios
 import axios from 'axios'
 export default {
@@ -127,6 +95,7 @@ export default {
             imgSrc2:require('../assets/trump2.jpg'),
             imgSrc3:require('../assets/trump3.jpg'),
             show: false,
+            login_show: false,
         }
     },
     methods: {
@@ -153,15 +122,24 @@ export default {
 
         submit() {
             // 确认弹窗回调
+            alert("success"),
             this.show = false
         },
 
         showVote(){
+            this.login_show = true
+            // this.show = true
+        },
+
+        signIn(){
+            this.login_show = false,
             this.show = true
         }
     },
     components: {
-        vote
+        vote,
+        login,
+        navigation
     }
 }
 </script>
