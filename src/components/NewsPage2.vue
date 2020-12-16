@@ -1,5 +1,5 @@
 <template>
-    <div class="bg">
+    <div class="bg3">
         <div class="newstitle">
             <img src="../assets/newstitle.jpg" class="w-100 h-100" />
         </div>
@@ -10,28 +10,28 @@
                 <!-- 导航栏 -->
                 <ul class="nav justify-content-around nav-justified">
                     <li class="nav-item text-center">
-                        <b><a href="/" class="nav-link text-danger text-center"> Election</a></b>
+                        <b><a href="/" class="nav-link text-center" style='color:#fff'> Election</a></b>
                     </li>
                     <li class="nav-item">
-                        <b><a href="/NewsPage" class="nav-link text-danger"> US</a></b>  
+                        <b><a href="/NewsPage" class="nav-link" style='color:#fff'> US</a></b>  
                     </li>
                     <li class="nav-item">
-                        <b><a href="/NesPage2" class="nav-link text-danger"> Politics</a></b>
+                        <b><a href="/NesPage2" class="nav-link" style='color:#fff'> Politics</a></b>
                     </li>
                     <li class="nav-item">
-                        <b><a href="#" class="nav-link text-danger"> Health</a></b>
+                        <b><a href="#" class="nav-link" style='color:#fff'> Health</a></b>
                     </li>
                     <li class="nav-item">
-                        <b><a href="#" class="nav-link text-danger"> Opinion</a></b> 
+                        <b><a href="#" class="nav-link" style='color:#fff'> Opinion</a></b> 
                     </li>
                     <li class="nav-item">
-                        <b><a href="#" class="nav-link text-danger"> Sports</a></b>
+                        <b><a href="#" class="nav-link" style='color:#fff'> Sports</a></b>
                     </li>
                 </ul>
                 <!-- 下拉按钮 -->
                 <!-- 遇到了一点bug，这个按钮没法靠右对齐 -->
                 <div class="dropdown float-right">
-                    <button class="btn btn-danger dropdown-toggle w-100" data-toggle="dropdown"><b>Edition</b></button>
+                    <a class="dropdown-toggle w-100" data-toggle="dropdown" style='color:#fff'><b>Edition</b></a>
                     <ul class="dropdown-menu">
                         <li> <a href="#" class="text-muted">U.S.</a></li>
                         <li> <a href="#" class="text-muted">International</a></li>
@@ -95,7 +95,7 @@
 </template>
 
 <style scoped>
-.bg {
+.bg3 {
     background-color:#fffefe;
     background-repeat:no-repeat;
     background-size: 100%;
@@ -159,8 +159,8 @@
   margin-left: 5%;
   font-size: 10%;
 }
-
+/* 
 #comment_content {
   background: linear-gradient(to left, #FF3C31, #1961FB);
-}
+} */
 </style>
