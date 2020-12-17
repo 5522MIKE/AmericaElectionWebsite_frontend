@@ -12,7 +12,8 @@
         name: "mapChart",
         data(){
             return {
-                toolTipData: []
+                toolTipData: [],
+                clickName: 'Alabama'
             }
             
         },
@@ -127,14 +128,27 @@
                             }
                         }
                     ],
-                    data: this.toolTipData
+                    data: this.toolTipData                                 
                 };
                 
-            window.addEventListener("resize",function(){            //窗口变化是重新渲染，响应式布局
-                myChart.resize()
-            });
-            // 使用刚指定的配置项和数据显示图表。
-            myChart.setOption(option);
+                window.addEventListener("resize",function(){            //窗口变化是重新渲染，响应式布局
+                    myChart.resize()
+                });
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+
+                // click事件，点击更新barhcart和piechart
+                myChart.on('click',(params)=>{
+                    // this.clickName = params.name;
+                    // console.log(params.dataIndex+1)
+                    // // console.log(this.clickName);
+                    // this.$emit('click-state',params.name);
+                    this.clickName = params.name;
+                    // console.log(this.clickName)
+                    // console.log(this.clickName);
+                    this.$emit('clickstate',params.name);
+
+                });
             },
             
             
@@ -172,7 +186,7 @@
             
         },
         mounted() {
-            this.myEcharts();
+            // this.myEcharts();
             
         }
         
