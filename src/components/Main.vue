@@ -103,7 +103,7 @@ export default {
         apiTest(){
             axios({
                 method:'get',
-                url:'http://127.0.0.1:8000/news/',
+                url:'http://10.252.64.119:8000/news/',
                 // 传递参数
                 params: {
                 },

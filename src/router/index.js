@@ -9,6 +9,7 @@ import IntroductionB from '../components/IntroductionB.vue'
 import IntroductionO from '../components/IntroductionO.vue'
 import NewsPage from '../components/NewsPage.vue'
 import NewsPage2 from '../components/NewsPage2.vue'
+import Navigation from '../components/Navigation.vue'
 
 const routerHistory = createWebHistory()
 // createWebHashHistory hash 路由
@@ -68,6 +69,10 @@ const router = createRouter({
     {
         path: '/introductiono',
         component: IntroductionO
+    },
+    {
+        path: '/n',
+        component: Navigation
     }
     ]
 })
