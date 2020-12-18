@@ -105,7 +105,7 @@ p {
 }
 @media (max-width: 640px) {
     .content {
-        top: 50%;
+        top: 58%;
     }
 }
 </style>
