@@ -20,13 +20,13 @@
         <div class="col">
             <!-- 新闻列表 -->
             <ul id="newList" class="list-group list-group-flush">
-                <a class="text-muted" href="/NewsPage"><li class="list-group-item">NEWS</li></a>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
+                <a class="text-muted" href="/"><li class="list-group-item">Election</li></a>
+                <a class="text-muted" href="/NewsPage"><li class="list-group-item">US</li></a>
+                <a class="text-muted" href="/NewsPage2"><li class="list-group-item">Politics</li></a>
+                <li class="list-group-item">Business</li>
+                <li class="list-group-item">Health</li>
+                <li class="list-group-item">Opinion</li>
+                <li class="list-group-item">Sports</li>
             </ul>
         </div>
         <!-- 图片轮播候选人 -->
