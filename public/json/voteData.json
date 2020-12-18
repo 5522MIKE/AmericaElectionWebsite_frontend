@@ -1,0 +1,908 @@
+{
+    "status": 200,
+    "code": 1,
+    "id": null,
+    "msg": "获取State成功",
+    "data": [
+        {
+            "state": {
+                "id": 1,
+                "name": "Alabama"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1441170,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 849624,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 2,
+                "name": "Alaska"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 189543,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 153502,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 3,
+                "name": "Arizona"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1661686,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1672143,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 4,
+                "name": "Arkansas"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 760613,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 423916,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 5,
+                "name": "California"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 5962975,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 11055577,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 6,
+                "name": "Colorado"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1364467,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1804184,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 7,
+                "name": "Connecticut"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 715291,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1080680,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 8,
+                "name": "Delaware"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 200603,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 296268,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 9,
+                "name": "Florida"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 5668731,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 5297045,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 10,
+                "name": "Georgia"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 2461837,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2474507,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 11,
+                "name": "Hawaii"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 196864,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 366130,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 12,
+                "name": "Idaho"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 554118,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 287021,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 13,
+                "name": "Illinois"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 2437755,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 3460611,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 14,
+                "name": "Indiana"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1729446,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1241774,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 15,
+                "name": "Iowa"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 897467,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 758881,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 16,
+                "name": "Kansas"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 752903,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 551144,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 17,
+                "name": "Kentucky"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1326646,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 772474,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 18,
+                "name": "Lousiana"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1255776,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 856034,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 19,
+                "name": "Maine"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 360446,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 431277,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 20,
+                "name": "Maryland"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 976414,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1985023,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 21,
+                "name": "Massachusetts"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1167202,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2382202,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 22,
+                "name": "Michigan"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 2649852,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2804040,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 23,
+                "name": "Minnesota"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1484065,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1717177,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 24,
+                "name": "Mississippi"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 756731,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 539494,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 25,
+                "name": "Missouri"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1717912,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1253561,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 26,
+                "name": "Montana"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 343602,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 244786,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 27,
+                "name": "Nebraska"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 556846,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 374583,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 28,
+                "name": "Nevada"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 669890,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 703486,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 29,
+                "name": "New Hampshire"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 365654,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 424921,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 30,
+                "name": "New Jersey"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1882454,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2607331,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 31,
+                "name": "New Mexico"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 401894,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 501614,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 32,
+                "name": "New York"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 2987266,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 4076327,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 33,
+                "name": "North Carolina"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 2758775,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2684302,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 34,
+                "name": "North Dakota"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 235595,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 114902,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 35,
+                "name": "Ohio"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 3153336,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2678501,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 36,
+                "name": "Oklahoma"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1020280,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 503890,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 37,
+                "name": "Oregon"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 966627,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1346141,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 38,
+                "name": "Pennsylvania"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 3377674,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 3458229,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 39,
+                "name": "RhodeIsland"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 199922,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 307486,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 40,
+                "name": "South Carolina"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1385103,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1091541,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 41,
+                "name": "South Dakota"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 261043,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 150471,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 42,
+                "name": "Tennessee"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1849820,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1139376,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 43,
+                "name": "Texas"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 5891792,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 5261061,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 44,
+                "name": "Utah"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 865140,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 560282,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 45,
+                "name": "Vermont"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 112704,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 242820,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 46,
+                "name": "Virginia"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1962430,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2413568,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 47,
+                "name": "Washington"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1584588,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 2369437,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 48,
+                "name": "West Virginia"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 545051,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 235847,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 49,
+                "name": "Wisconsin"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 1610151,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 1630716,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        },
+        {
+            "state": {
+                "id": 50,
+                "name": "Wyoming"
+            },
+            "vote": [
+                {
+                    "candidate_id": 1,
+                    "vote_num": 193559,
+                    "candidate_name": "Donald Trump"
+                },
+                {
+                    "candidate_id": 2,
+                    "vote_num": 73491,
+                    "candidate_name": "Joe Biden"
+                }
+            ]
+        }
+    ]
+}
