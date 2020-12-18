@@ -1,22 +1,35 @@
 <template>
-    <div class="container">
-        <form class="form-signin">
-        <h1 class="h3 mb-3 font-weight-normal">用户登录</h1>
-        <input  id="inputEmail" class="form-control" placeholder="ID number" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox mb-3">
-            <input type="checkbox" value="remember-me" id="remember"><label for="remember">Remember me</label>
-        </div>
-        <button class="btn btn-outline-success" type="submit">Sign in</button>
-    </form>
+    <div class="container" v-show="login_show">
+            <h1 class="h3 mb-3 font-weight-normal">Please enter your ID before voting</h1>
+            <input  id="inputEmail" class="form-control" placeholder="ID number" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <button class="btn btn-outline-success my-2 my-sm-0" @click="signIn">Sign in</button>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'login',
+    props: {
+        login_show: {
+            type: Boolean,
+            default: true
+        },
+    },
+    methods: {
+        signIn() {
+            this.$emit('submit')
+        },
+    }
+}
+</script>
 
 <style scoped>
 button {
     width: 60%;
 }
 .container {
+    background: linear-gradient(to left, #ebd0d0, #becddf);
     position: absolute;
     /* position: relative; */
     top: 30%;
@@ -43,6 +56,11 @@ button {
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         opacity: 1;
+    }
+}
+@media (max-width: 640px) {
+    .container {
+        top: 55%;
     }
 }
 </style>

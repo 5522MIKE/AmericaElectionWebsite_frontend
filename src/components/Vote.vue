@@ -1,19 +1,24 @@
 <template>
-    <div class="modal-bg" v-show="show">
-        <div class='content'>
-            <h1>VOTE!!!</h1>
-            <p>Please cast your precious vote.</p>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                <label class="form-check-label" for="inlineRadio1">1</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                <label class="form-check-label" for="inlineRadio2">2</label>
-            </div>
-            <button @click="submit">确认</button>
+    <div class='content' v-show="show">
+        <h1>VOTE!!!</h1>
+        <p>Please cast your precious vote.</p>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Trump</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Biden</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio3">Kanye</label>
+        </div>
+        <div>
+            <button class="btn btn-outline-success my-2 my-sm-0"  @click="submit">确认</button>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -22,7 +27,7 @@ export default {
     props: {
         show: {
             type: Boolean,
-            default: false
+            default: true
         },
     },
     methods: {
@@ -35,6 +40,9 @@ export default {
 
 
 <style scoped>
+button{
+    width: 50%;
+}
 *,
 *:before,
 *:after {
@@ -69,7 +77,7 @@ p {
     background: linear-gradient(to left, #ebd0d0, #becddf);
     position: absolute;
     /* position: relative; */
-    top: 50%;
+    top: 30%;
     left: 50%;
     width: 100%;
     max-width: 660px;
@@ -93,6 +101,11 @@ p {
         -webkit-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         opacity: 1;
+    }
+}
+@media (max-width: 640px) {
+    .content {
+        top: 58%;
     }
 }
 </style>
