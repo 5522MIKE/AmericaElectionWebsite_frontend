@@ -1,5 +1,6 @@
 <template>
 <div class="bg">
+<!-- <div class="container-fluid"> -->
 <div class="container">
     <!-- 悬浮组件 -->
     <vote :show="show" @submit="submit" />

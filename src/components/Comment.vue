@@ -4,7 +4,7 @@
     <!-- 导航栏 -->
     <navigation />
     <!-- 评论 --> 
-    <div class="card">
+    <div class="card" v-show="draftShow">
         <div class="card-body">
             <h4 class="card-title">草稿：  {{title}}</h4>
             <p class="card-text">{{text}}</p>
@@ -68,6 +68,7 @@ export default {
     },
     data(){
         return {
+            draftShow: false,
             parentMessage: 'title',
             items: [
                 { title:'?', message: 'Foo' }, 
@@ -82,23 +83,23 @@ export default {
     methods: {
         // api调用函数
         submitapi(){
-            console.log("submit")
+            // console.log("submit")
             // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
-            let param = new URLSearchParams()
-            param.append('content', 'admin')
-            param.append('news_id', '1')
-            console.log(param.get('news_id'))
-            const data = { 'content': 123 , 'news_id':1};
+            // let param = new URLSearchParams()
+            // param.append('content', 'admin')
+            // param.append('news_id', '1')
+            // console.log(param.get('news_id'))
+            const data = { 'content': this.text , 'news_id':1};
             console.log(qs.stringify(data))
             axios({
                 method:'post',
                 url:'http://127.0.0.1:8000/news/comment/submit',
                 // 传递参数
-                // body: {
+                // data: {
                 //     content:'test2',
                 //     news_id:1
                 // },
-                body:qs.stringify(data),
+                data:qs.stringify(data),
                 headers: {
                     'Content-Type':'application/x-www-form-urlencoded',
                     'Accept':'*/*'
@@ -113,6 +114,7 @@ export default {
             });
         },
         submit(){
+            this.draftShow = true;
             var obj = {};
             obj["title"] = this.title,
             obj["message"] = this.text,
@@ -136,6 +138,11 @@ export default {
 @media (max-width: 640px) {
     .bottom {
         width:95%
+    }
+}
+@media (max-width: 1550px) and (min-width: 640px) {
+    .bottom {
+        width:73.1%
     }
 }
 </style>
