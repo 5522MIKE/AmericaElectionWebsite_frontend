@@ -60,7 +60,7 @@ button {
 }
 @media (max-width: 640px) {
     .container {
-        top: 50%;
+        top: 55%;
     }
 }
 </style>

@@ -1,5 +1,6 @@
 <template>
 <div class="bg">
+<!-- <div class="container-fluid"> -->
 <div class="container">
     <!-- 悬浮组件 -->
     <vote :show="show" @submit="submit" />
@@ -12,12 +13,13 @@
         <h1>CAST YOUR SACRED VOTE</h1>
         <p><button id="vote" @click='showVote'  class="btn btn-success btn-lg" href="#" role="button">VOTE!</button></p>
         <!-- 点击后调用apiTest函数 -->
-        <!-- <p><button @click="apiTest">apitest</button></p> -->
+        <p><button @click="apiTest">apitest</button></p>
     </div>
     <!-- 新闻栏&总统候选人介绍 -->
-    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="row row-cols-sm-2 row-cols-1">
         <!-- 新闻栏目 -->
         <div class="col">
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
             <!-- 新闻列表 -->
             <ul id="newList" class="list-group list-group-flush">
                 <a class="text-muted" href="/"><li class="list-group-item">Election</li></a>
@@ -29,8 +31,10 @@
                 <li class="list-group-item">Sports</li>
             </ul>
         </div>
+        </div>
         <!-- 图片轮播候选人 -->
         <div class="col">
+        <div class="shadow-lg">
             <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -70,6 +74,7 @@
                 </a>
             </div>  
         </div>
+        </div>
     </div>
     <!-- 脚注 -->
     <div class="card-footer text-muted">
@@ -102,13 +107,16 @@ export default {
         // api调用函数
         apiTest(){
             axios({
+
                 method:'get',
                 url:'http://10.252.64.119:8000/news/',
                 // 传递参数
                 params: {
+
                 },
                 // 设置请求头信息，可以传递空值
                 headers: {
+                    'content-type': 'application/x-www-form-urlencoded'
                 }
             }).then(response => {
                 // 请求成功
@@ -161,9 +169,7 @@ export default {
 .jumbotron {
     box-shadow: 3px 0px 5px #fffefe;
 }
-#carouselExampleCaptions {
-    box-shadow: 3px 3px 5px #fffefe;
-}
+
 #newList {
     box-shadow: 3px 3px 5px #fffefe;
 }

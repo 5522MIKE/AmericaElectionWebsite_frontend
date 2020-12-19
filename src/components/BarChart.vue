@@ -101,7 +101,7 @@ export default {
         
     },
     mounted(){
-        this.myEcharts();
+        // this.myEcharts();
     },
 }
 </script>

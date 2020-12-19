@@ -20,12 +20,15 @@
                             </div>
                         </li>
                     </ul>
-                    <!-- 数据可视化 -->
-                    <ul>
+                    &nbsp;&nbsp;
+                    <!-- 数据可视化 数据地图-->
+                        <router-link to="/DataView2" replace="/">
+                            <a class="btn btn-outline-danger my-2 my-lg-0 mr-sm-2">Election Map</a> 
+                        </router-link>
+                    <!-- 数据可视化 数据条形图-->
                         <router-link to="/DataView" replace="/">
                             <a class="btn btn-outline-danger my-2 my-lg-0 mr-sm-2">Election Results</a> 
                         </router-link>
-                    </ul> 
                 </div>
             </ul>
 
