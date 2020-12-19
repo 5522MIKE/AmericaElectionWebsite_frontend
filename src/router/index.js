@@ -81,7 +81,6 @@ const router = createRouter({
 
         path: '/comment',
         component: Comment
-        dev-01
     }
     ]
 })
