@@ -13,7 +13,7 @@
         <h1>CAST YOUR SACRED VOTE</h1>
         <p><button id="vote" @click='showVote'  class="btn btn-success btn-lg" href="#" role="button">VOTE!</button></p>
         <!-- 点击后调用apiTest函数 -->
-        <p><button @click="apiTest">apitest</button></p>
+        <!-- <p><button @click="apiTest">apitest</button></p> -->
     </div>
     <!-- 新闻栏&总统候选人介绍 -->
     <div class="row row-cols-sm-2 row-cols-1">
@@ -107,8 +107,9 @@ export default {
         // api调用函数
         apiTest(){
             axios({
-                method:'post',
-                url:'http://127.0.0.1:8000/user/register',
+
+                method:'get',
+                url:'http://10.252.64.119:8000/news/',
                 // 传递参数
                 params: {
 
