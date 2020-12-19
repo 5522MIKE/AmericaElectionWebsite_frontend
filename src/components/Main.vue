@@ -107,8 +107,9 @@ export default {
         // api调用函数
         apiTest(){
             axios({
-                method:'post',
-                url:'http://127.0.0.1:8000/user/register',
+
+                method:'get',
+                url:'http://10.252.64.119:8000/news/',
                 // 传递参数
                 params: {
 
