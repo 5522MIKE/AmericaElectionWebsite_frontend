@@ -6,7 +6,7 @@
     <!-- 评论 --> 
     <div class="card" v-show="draftShow">
         <div class="card-body">
-            <h4 class="card-title">草稿：  {{title}}</h4>
+            <h4 class="card-title">DRAFT：  {{title}}</h4>
             <p class="card-text">{{text}}</p>
             <a href="#" class="card-link">reply</a>
             <a href="#" class="card-link">share</a>
@@ -14,8 +14,8 @@
     </div>
 
     <div class="card">
-        <div class="card-body" v-for="(item, index) in items" :key="item.index" >
-            <h4 class="card-title">{{index}} - {{ item.title }}</h4>
+        <div class="card-body" v-for="(item) in items" :key="item.index" >
+            <h4 class="card-title">{{ item.title }}</h4>
             <p class="card-text">{{ item.message }}</p>
             <a href="#" class="card-link">reply</a>
             <a href="#" class="card-link">share</a>
@@ -34,13 +34,13 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Title</span>
         </div>
-        <input v-model="title" type="text" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
+        <input v-model="title" type="text" @click="showDraft" class="form-control" placeholder="Title" aria-label="Title" aria-describedby="basic-addon1">
     </div>
     <div class="input-group">
         <div class="input-group-prepend">
             <span class="input-group-text">Comment</span>
         </div>
-        <textarea v-model="text" class="form-control" aria-label="With textarea"></textarea>
+        <textarea v-model="text" class="form-control" @click="showDraft" aria-label="With textarea"></textarea>
         <button class="btn btn-success btn-lg" @click="submit">submit</button>
     </div>
     </div>
@@ -71,10 +71,10 @@ export default {
             draftShow: false,
             parentMessage: 'title',
             items: [
-                { title:'?', message: 'Foo' }, 
-                { title:'?', message: 'Bar' },
-                { title:'?', message: 'Bar' },
-                { title:'?', message: 'Bar' },
+                { title:'Thanks', message: 'THANK YOU to the GREAT men and women of @FedEx and @UPS for driving through the storms this week to deliver millions of doses of the vaccine across the country. Two Great American Companies!' }, 
+                { title:'FYI ...', message: '-COVID is now the 3rd leading cause of US deaths' },
+                { title:'Governor of Georgia!!!', message: 'The Secretary of State and Governor of Georgia, both so-called “Republicans”, aren’t allowing Fulton County to go through the vital Voter Signature Verification process. Also, they are not allowing Republican “watchers” to be present and verify!' },
+                { title:'SWORN', message: 'Biden will be sworn in on Jan. 20.' },
             ],
             title:'',
             text:'',
@@ -121,6 +121,10 @@ export default {
             console.log(obj)
             this.items.push(obj)
             console.log(this.items)
+            this.draftShow = false
+        },
+        showDraft(){
+            this.draftShow = true
         }
     }
 }
