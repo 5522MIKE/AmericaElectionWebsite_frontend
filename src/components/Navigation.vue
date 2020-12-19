@@ -32,32 +32,67 @@
             <!-- 查询 -->
             <nav class="navbar navbar-light bg-light">
                 <!-- <form class="form-inline my-2 my-lg-0"> -->
-                    <div>
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="keyword" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="lodedata">Search</button>
-                    </div>
+                        <ul>
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="keyword" aria-label="Search">
+                        </ul>
+                        <ul>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="lodedata">Search</button>
+                        </ul>
                 <!-- </form> -->
             </nav>
         </nav>
     </div>
     <div class="container" v-show="search_show">
         <button class="btn btn-link btn-sm" @click="back">收起</button>
-        <h3>{{title}}</h3>
-        <p class="text-center">{{author}}</p>
-        <p class="text-justify">{{content}}</p>
+        <!-- <div>
+            <h3>{{title}}</h3>
+            <p class="text-center">{{author}}</p>
+            <p class="text-justify">{{content}}</p>
+        </div> -->
+        <div class="content-card" v-for="(item ,index) in resultList" :key="index">
+            <span v-html="item.title"></span><br>
+            <span v-html="item.author"></span><br>
+            <span v-html="item.content"></span>
+        </div>
     </div>
 </template>
 
 <style scoped>
 .container {
     background: linear-gradient(to left, #ebd0d0, #becddf);
-    position: relative;
+    position: absolute;
     /* position: relative; */
-    top: 40%;
+    top: 35%;
+    left: 50%;
     width: 100%;
     max-width: 1110px;
     padding: 0 30px;
+    z-index:10;
     text-align: center;
+    -webkit-transform: translate(-50%, 50vh);
+    transform: translate(-50%, 50vh);
+    opacity: 0;
+    -webkit-animation: 0.75s 0.75s forwards slide_in;
+    animation: 0.75s 0.75s forwards slide_in;
+}
+@-webkit-keyframes slide_in {
+    100% {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+@keyframes slide_in {
+    100% {
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+@media (max-width: 640px) {
+    .container {
+        top: 50%;
+    }
 }
 </style>
 
@@ -91,20 +126,20 @@ export default {
             }).then(response => {
                 // 请求成功
                 let res = response.data;
-                this.deviceList = res;
+                this.deviceList = res.data;
                 this.resultList = [];
-                console.log(this.deviceList.data)
-                this.title = this.deviceList.data[0].title;
-                this.author = this.deviceList.data[0].author;
-                this.content = this.deviceList.data[0].content;
-                this.deviceList.data.forEach((item =>{
-                    if(item.title.indexOf(this.keyword)>-1||
-                        item.author.indexOf(this.keyword)>-1||
-                        item.content.indexOf(this.keyword)>-1){
-                        this.resultList.push(item)
+                // console.log(this.deviceList)
+                this.deviceList.forEach((item) => {
+                    // console.log("sdd  d "+item.title)
+                    // console.log(item.title.indexOf("of"))
+                    if (item.title.indexOf(this.keyword) > -1 ||
+                        item.author.indexOf(this.keyword) > -1 ||
+                        item.content.indexOf(this.keyword) > -1) {
+                    this.resultList.push(item)
                     }
-                }))
-                this.resultList.map((item) =>{
+                })
+                this.resultList.map((item) => {
+                    console.log(item.content)
                     item.title = this.brightKeyword(item.title)
                     item.author = this.brightKeyword(item.author)
                     item.content = this.brightKeyword(item.content)
@@ -119,9 +154,10 @@ export default {
         },
         brightKeyword(val) {
             let keyword = this.keyword   //获取输入框输入的内容
+            // console.log(val.indexOf("of"))
             if (val.indexOf(keyword) !== -1) {  //判断这个字段中是否包含keyword
                 //如果包含的话，就把这个字段中的那一部分进行替换成html字符
-                return val.replace(keyword, `<font color='#42cccc'>${keyword}</font>`)
+                return val.replace(keyword, `<font color='#f8f403'>${keyword}</font>`)
             } else {
                 return val
             }
