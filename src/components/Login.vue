@@ -36,6 +36,7 @@ button {
     left: 50%;
     width: 100%;
     max-width: 660px;
+    z-index:10;
     padding: 0 30px;
     text-align: center;
     -webkit-transform: translate(-50%, 50vh);
