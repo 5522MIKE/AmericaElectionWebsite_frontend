@@ -140,6 +140,12 @@ export default {
                 // 请求成功
                 let res = response.data;
                 this.deviceList = res.data;
+                if(res.data.length == 0){
+                    console.log(res.data.length)
+                    alert("Sorry!There is no query record!")
+                    this.search_show = false
+                    this.keyword = ''
+                }
                 this.resultList = [];
                 // console.log(this.deviceList)
                 this.deviceList.forEach((item) => {
@@ -164,6 +170,7 @@ export default {
         },
         back(){
             this.search_show = false
+            this.keyword = ''
         },
         brightKeyword(val) {
             let keyword = this.keyword   //获取输入框输入的内容
