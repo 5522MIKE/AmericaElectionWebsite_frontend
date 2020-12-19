@@ -122,6 +122,8 @@ export default {
             this.items.push(obj)
             console.log(this.items)
             this.draftShow = false
+            this.title = ''
+            this.text = ''
         },
         showDraft(){
             this.draftShow = true
