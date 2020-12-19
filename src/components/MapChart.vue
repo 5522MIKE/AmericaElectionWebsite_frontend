@@ -7,6 +7,7 @@
     import echarts from "echarts";
     import usaJson from "../assets/json/usa.json"  //美国地图的geojson数据
     import axios from "axios";
+    // import voteData from "../assets/json/voteData.json"
 
     export default {
         name: "mapChart",
@@ -157,11 +158,11 @@
         created(){
             
             const instance = axios.create({
-                    baseURL: 'http://10.252.64.119:8000/vote/state',
+                    baseURL: '/json/voteData.json',
                     method: 'get',
                     timeout: 1000,
                 })
-            instance.get('/').then(res=>{
+            instance.get().then(res=>{
                 
                 for(let i in res.data.data){
                     let temp = res.data.data[i];
