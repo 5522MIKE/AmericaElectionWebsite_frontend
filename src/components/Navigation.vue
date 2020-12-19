@@ -30,16 +30,26 @@
             </ul>
 
             <!-- 查询 -->
-            <nav class="navbar navbar-light bg-light">
-                <!-- <form class="form-inline my-2 my-lg-0"> -->
-                        <ul>
+            <ul class="navbar-nav mr-auto">
+                <div class="d-flex p-2 bd-highlight">
+                    <ul>
                             <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="keyword" aria-label="Search">
                         </ul>
                         <ul>
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="lodedata">Search</button>
+                        </ul> 
+                </div>
+            </ul>
+            <!-- <nav class="navbar navbar-light bg-light"> -->
+                <!-- <form class="form-inline my-2 my-lg-0"> -->
+                        <!-- <ul>
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" v-model="keyword" aria-label="Search">
                         </ul>
+                        <ul>
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" @click="lodedata">Search</button>
+                        </ul> -->
                 <!-- </form> -->
-            </nav>
+            <!-- </nav> -->
         </nav>
     </div>
     <div class="container" v-show="search_show">
