@@ -7,11 +7,16 @@
             <div class="main">
                 <!-- 地图组件 -->
                 <div class="row">
-                    <!-- <map-chart></map-chart>     -->
+                    <map-chart v-on:clickstate="clickstate"></map-chart>
                 </div>
                 <!-- 条形图组件 -->
                 <div class="row">
-                    <bar-chart></bar-chart>
+                    <div class="col-sm-12 col-lg-6">
+                        <bar-chart-2 v-bind:state="state"></bar-chart-2>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <pie-chart v-bind:state="state"></pie-chart>
+                    </div>
                 </div>
             </div>
             <!-- 脚注 -->
@@ -24,25 +29,34 @@
 
 <script>
     // 引入数据可视化组件
-    // import MapChart from './MapChart.vue';
-    import BarChart from './BarChart.vue';
+    import MapChart from './MapChart.vue'
+    import BarChart2 from './BarChart2.vue';
+    import PieChart from './PieChart.vue';
     // 引入导航栏
     import navigation from './Navigation.vue'
 
     export default {
         name: "main",
+        data(){
+            return {
+                state: 'Alabama'
+            }
+        },
         components: {
             // 'map-chart': MapChart,    //地图组件
-            'bar-chart': BarChart,    //条形图
+            'map-chart': MapChart,
+            'pie-chart': PieChart,
+            'bar-chart-2': BarChart2,    //条形图
             navigation                //导航栏
         },
     
         methods: {
-         
+            clickstate(val){
+                this.state = val;
+                // console.log(this.state);
+            }
         },
         mounted() {
-            // MapChart.methods.myEcharts(),          //这里是为了能够在改变窗口大小时刷新，响应式布局
-            // BarChart.methods.myEcharts()
         }
         
     };

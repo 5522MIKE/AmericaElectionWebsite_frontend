@@ -17,6 +17,8 @@
     "jquery": "^3.5.1",
     "less": "^3.12.2",
     "popper.js": "^1.16.1",
+    "qs": "^6.9.4",
+    "url-search-params-polyfill": "^8.1.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-alpha.6"
   },
