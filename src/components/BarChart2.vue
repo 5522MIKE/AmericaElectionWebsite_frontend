@@ -114,7 +114,7 @@ export default {
     },
     created(){
         const instance = axios.create({
-                baseURL: 'http://10.252.64.119:8000/vote/state/',
+                baseURL: 'http://127.0.0.1:8000/vote/state/',
                 method: 'get',
                 timeout: 1000,
             })
