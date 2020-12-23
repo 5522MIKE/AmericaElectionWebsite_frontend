@@ -129,7 +129,7 @@ export default {
             this.search_show = true
             axios({
                 method:'get',
-                url:'http://10.252.64.119:8000/news/search/'+this.keyword+'/',
+                url:'http://127.0.0.1:8000/news/search/'+this.keyword+'/',
                 // 传递参数
                 params: {
                 },
